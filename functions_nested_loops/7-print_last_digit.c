@@ -5,11 +5,11 @@
  *
  * Return: the value of the last digit
  */
-int print_last_digit(int number)
+int print_last_digit(int n)
 {
 	int last_digit;
 
-	last_digit = number % 10;
+	last_digit = n % 10;
 	if (last_digit < 0)
 	last_digit = -last_digit;
 
