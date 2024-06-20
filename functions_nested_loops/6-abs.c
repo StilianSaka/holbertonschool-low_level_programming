@@ -1,10 +1,9 @@
 #include "main.h"
 /**
  * int _abs - computes the absolute value of an integrer
- * @number: number to check
+ * @n: the integer to compute the absolute value of
  *
- * return number if number is positive
- * return -number else number is negative
+ * the absolute value of the integer
  */
 
 int _abs(int number)
