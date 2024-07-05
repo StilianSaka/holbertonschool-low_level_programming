@@ -3,6 +3,7 @@
  * main - entry point
  * @argc: argument count
  * @argv: argument array
+  * return: Always 0.
  */
 int main(int argc, char *argv[] __attribute__((__unused__)))
 {
