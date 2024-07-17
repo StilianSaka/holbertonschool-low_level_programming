@@ -11,7 +11,7 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 		};
-	
+
 	int i;
 
 	i = 0;
@@ -20,10 +20,10 @@ int (*get_op_func(char *s))(int, int)
 		if (*ops[i].op == *s)
 		{
 			return (ops[i].f);
-			
-		}	
+
+		}
 			i++;
 	}
-			
+
 	return (NULL);
 }
