@@ -3,6 +3,17 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+/**
+ * read_textfile - Reads a text file and prints it to the POSIX standard output.
+ * @filename: The name of the file to read from.
+ * @letters: The number of letters to read and print.
+ *
+ * Return: The actual number of letters it could read and print,
+ *         or 0 if the file cannot be opened or read,
+ *         if filename is NULL, or if write fails or does not write the
+ *         expected amount of bytes.
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
