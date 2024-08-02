@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 /**
- * read_textfile - Reads a text file and prints it to the POSIX standard output.
+ * read_textfile- Reads a text file and prints it to the POSIX standard output.
  * @filename: The name of the file to read from.
  * @letters: The number of letters to read and print.
  *
