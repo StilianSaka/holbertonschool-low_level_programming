@@ -73,5 +73,12 @@ int main(int ac, char *av[])
 		exit(100);
 	}
 
+	/* Change permissions of the created file */
+	if (chmod(av[2], perm) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't change permissions of %s\n", av[2]);
+		exit(101);
+	}
+
 	return (0);
 }
