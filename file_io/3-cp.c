@@ -11,7 +11,7 @@
  * main - entry point
  * @ac: argument count
  * @av: array of argument tokens
- * Return: 0 on success
+ * Return: 0 on success, exits with error codes otherwise
  */
 int main(int ac, char *av[])
 {
@@ -63,6 +63,7 @@ int main(int ac, char *av[])
 	if (close(fd_from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
+		close(fd_to); /* Ensure fd_to is closed before exiting */
 		exit(100);
 	}
 
