@@ -16,7 +16,6 @@
 int main(int ac, char *av[])
 {
 	int fd_from, fd_to, rd_stat, wr_stat;
-	mode_t perm = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 	char buffer[BUFSIZE];
 
 	if (ac != 3)
@@ -32,7 +31,7 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 
-	fd_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, perm);
+	fd_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
@@ -71,13 +70,6 @@ int main(int ac, char *av[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
-	}
-
-	/* Change permissions of the created file */
-	if (chmod(av[2], perm) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't change permissions of %s\n", av[2]);
-		exit(101);
 	}
 
 	return (0);
