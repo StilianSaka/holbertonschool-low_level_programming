@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - Copies content of file to another
+ * main - Copies content of file to another 
  *
  * @argc: int
  *
